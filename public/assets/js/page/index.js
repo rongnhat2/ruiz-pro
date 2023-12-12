@@ -178,6 +178,14 @@ const View = {
             .fail(err => { IndexView.helper.showToastError('Error', 'Error'); })
             .always(() => { });
     } 
+    function getDiscount(){
+        Api.Product.GetAllNew()
+            .done(res => {
+                View.Product.renderNew(res.data)
+            })
+            .fail(err => { IndexView.helper.showToastError('Error', 'Error'); })
+            .always(() => { });
+    } 
     function getBestSale(){
         Api.Product.getBestSale()
             .done(res => {

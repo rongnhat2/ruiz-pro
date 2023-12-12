@@ -104,17 +104,24 @@
                             <li class="product-tab__item nav-item active">
                                 <a class="product-tab__link active" id="nav-new-tab" data-bs-toggle="tab" href="#nav-new" role="tab" aria-selected="false">New Arrivals</a>
                             </li>
+                            {{-- <li class="product-tab__item nav-item">
+                                <a class="product-tab__link " id="nav-new-tab" data-bs-toggle="tab" href="#nav-discount" role="tab" aria-selected="false">Discount</a>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
                 
                 
                 <div class="tab-content product-tab__content" id="product-tabContent">
-                    
-                    
                     <div class="tab-pane fade show active" id="nav-new" role="tabpanel">
                         <div class="product-carousel-group">
                             <div class="row product-active-row-4 new-products">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-discount" role="tabpanel">
+                        <div class="product-carousel-group">
+                            <div class="row product-active-row-4 discount-products">
                             </div>
                         </div>
                     </div>
@@ -135,8 +142,7 @@
                     </div>
                 </div>
                 <div class="row blog-list">
-                     
-                    
+
                 </div>
             </div>
         </div>

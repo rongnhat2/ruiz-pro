@@ -77,5 +77,3 @@
 @section('js')
 
 @endsection()
-        
-XZ8rp8RzF{$O

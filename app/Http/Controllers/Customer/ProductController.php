@@ -29,6 +29,17 @@ class ProductController extends Controller
         $this->product             = new ProductRepository($product);  
     }
 
+    public function get(Request $request){
+        $count = count($this->product->get_all_condition($request));
+
+        $data_product = $this->product->get_condition($request, $count); 
+        
+        $data_return = [
+            "data"      => $data_product,
+            "count"     => $count,
+        ];
+        return $this->product->send_response(200, $data_return, null);
+    }
     public function get_all_new(){
         $data = $this->product->get_all_new();
         return $this->product->send_response(201, $data, null);

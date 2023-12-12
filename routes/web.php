@@ -27,6 +27,36 @@ Route::get('contact-us', 'Customer\DisplayController@contact')->name('customer.v
 Route::get('order-success', 'Customer\DisplayController@order_success')->name('customer.view.success'); 
 
 
+Route::prefix('auth')->group(function () {
+    Route::post('register', 'Customer\AuthController@register')->name('customer.auth.register');
+    Route::post('login', 'Customer\AuthController@login')->name('customer.auth.login');
+    Route::post('forgot', 'Customer\AuthController@forgot')->name('customer.auth.forgot');
+    Route::post('reset', 'Customer\AuthController@reset')->name('customer.auth.reset');
+    Route::post('code', 'Customer\AuthController@code')->name('customer.auth.code');
+    Route::post('change', 'Customer\AuthController@change')->name('customer.auth.change');
+    Route::post('update', 'Customer\AuthController@update')->name('customer.auth.update');
+    Route::get('get-profile', 'Customer\AuthController@get_profile')->name('customer.auth.profile');
+}); 
+Route::prefix('order')->group(function () {
+    Route::post('checkout', 'Customer\OrderController@checkout')->name('customer.order.checkout');
+    Route::get('get', 'Customer\OrderController@get')->name('customer.order.get');
+});  
+
+Route::get('register', 'Customer\DisplayController@register')->name('customer.view.register'); 
+Route::get('login', 'Customer\DisplayController@login')->name('customer.view.login'); 
+
+Route::get('forgot', 'Customer\DisplayController@forgot')->name('customer.view.forgot'); 
+Route::get('reset', 'Customer\DisplayController@reset')->name('customer.view.reset'); 
+
+Route::middleware(['AuthCustomer:login'])->group(function () {
+    Route::get('register', 'Customer\DisplayController@register')->name('customer.view.register'); 
+    Route::get('login', 'Customer\DisplayController@login')->name('customer.view.login'); 
+});
+Route::middleware(['AuthCustomer:logined'])->group(function () {
+    Route::post('logout', 'Customer\AuthController@logout')->name('customer.logout');
+    Route::get('profile', 'Customer\DisplayController@profile')->name('admin.profile.index');
+});
+
 
 Route::middleware(['AuthAdmin:auth'])->group(function () {
     Route::prefix('admin')->group(function () {

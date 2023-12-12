@@ -61,6 +61,13 @@ Route::prefix('banner')->group(function () {
     Route::post('/update', 'Admin\BannerController@update')->name('admin.banner.update');
     Route::get('/delete/{id}', 'Admin\BannerController@delete')->name('admin.banner.delete');
 }); 
+Route::prefix('discount')->group(function () {
+    Route::get('/get', 'Admin\DiscountController@get')->name('admin.discount.get');
+    Route::post('/store', 'Admin\DiscountController@store')->name('admin.discount.store');
+    Route::get('/get-one/{id}', 'Admin\DiscountController@get_one')->name('admin.discount.get_one');
+    Route::post('/update', 'Admin\DiscountController@update')->name('admin.discount.update');
+    Route::get('/delete/{id}', 'Admin\DiscountController@delete')->name('admin.discount.delete');
+}); 
 
 
 Route::prefix('warehouse')->group(function () {
@@ -83,17 +90,19 @@ Route::prefix('order')->group(function () {
     Route::post('/update', 'Admin\OrderController@update')->name('admin.order.update');
 });
 
-
 Route::prefix('customer')->group(function () {
     Route::prefix('blog')->group(function () {
         Route::get('get', 'Customer\BlogController@get')->name('customer.blog.get');
     }); 
+
     Route::prefix('color')->group(function () {
         Route::get('/get', 'Customer\ColorController@get')->name('customer.color.get'); 
     });
+    
     Route::prefix('brand')->group(function () {
         Route::get('/get', 'Customer\BrandController@get')->name('customer.brand.get'); 
     });
+
     Route::prefix('comment')->group(function () {
         Route::get('get/{id}', 'Customer\CommentController@get')->name('customer.comment.get');
         Route::post('create', 'Customer\CommentController@create')->name('customer.comment.create');
@@ -104,20 +113,9 @@ Route::prefix('customer')->group(function () {
         Route::get('/get-best-sale', 'Customer\ProductController@get_best_sale')->name('admin.product.get');
         Route::get('/get-one/{id}', 'Customer\ProductController@get_one')->name('admin.product.get');
 
-
         Route::get('/get', 'Customer\ProductController@get')->name('admin.product.get');
         Route::post('get-search', 'Customer\ProductController@get_search')->name('customer.product.get.search');
         Route::get('get-related/{id}', 'Customer\ProductController@get_related')->name('customer.product.get.related');
 
     });
-    Route::prefix('auth')->group(function () {
-        Route::post('register', 'Customer\AuthController@register')->name('customer.auth.register');
-        Route::post('login', 'Customer\AuthController@login')->name('customer.auth.login');
-        Route::post('forgot', 'Customer\AuthController@forgot')->name('customer.auth.forgot');
-        Route::post('reset', 'Customer\AuthController@reset')->name('customer.auth.reset');
-        Route::post('code', 'Customer\AuthController@code')->name('customer.auth.code');
-        Route::post('change', 'Customer\AuthController@change')->name('customer.auth.change');
-        Route::post('update', 'Customer\AuthController@update')->name('customer.auth.update');
-        Route::get('get-profile', 'Customer\AuthController@get_profile')->name('customer.auth.profile');
-    }); 
 }); 

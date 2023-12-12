@@ -273,9 +273,9 @@ $('[data-countdown]').each(function() {
 -------------------------------*/  
 $( "#price-slider" ).slider({
    range: true,
-   min: 0,
+   min: 1,
    max: 999,
-   values: [ 0, 999 ],
+   values: [ 1, 999 ],
    slide: function( event, ui ) {
         $( "#min-price" ).val('$' + ui.values[ 0 ] );
         $( "#max-price" ).val('$' + ui.values[ 1 ] );

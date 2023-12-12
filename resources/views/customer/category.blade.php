@@ -58,7 +58,7 @@
                                         <div>
                                             <div id="price-slider" class="price-slider"></div>
                                             <div class="filter-price-wapper">
-                                                <input type="hidden" class="value-price" value="0-999">
+                                                <input type="hidden" class="value-price" value="1-999">
                                                 <a class="add-to-cart-button" href="#">
                                                     <span>FILTER</span>
                                                 </a>

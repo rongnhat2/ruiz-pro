@@ -29,55 +29,55 @@ const Api = {
 //Auth
 (() => {
     Api.Auth.Register = (data) => $.ajax({
-        url: `/api/customer/auth/register`,
+        url: `/auth/register`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Auth.Login = (data) => $.ajax({
-        url: `/api/customer/auth/login`,
+        url: `/auth/login`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Auth.Forgot = (data) => $.ajax({
-        url: `/api/customer/auth/forgot`,
+        url: `/auth/forgot`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Auth.Reset = (data) => $.ajax({
-        url: `/api/customer/auth/reset`,
+        url: `/auth/reset`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Auth.Code = () => $.ajax({
-        url: `/api/customer/auth/code`,
+        url: `/auth/code`,
         method: 'POST',
         contentType: false,
         processData: false,
     });
     Api.Auth.Change = (data) => $.ajax({
-        url: `/api/customer/auth/change`,
+        url: `/auth/change`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Auth.Update = (data) => $.ajax({
-        url: `/api/customer/auth/update`,
+        url: `/auth/update`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Auth.GetProfile = (id) => $.ajax({
-        url: `/api/customer/auth/get-profile`,
+        url: `/auth/get-profile`,
         method: 'GET',
     });
 })();
@@ -174,14 +174,14 @@ const Api = {
 // Order
 (() => {
     Api.Order.Checkout = (data) => $.ajax({
-        url: `/customer/apip/order/checkout`,
+        url: `/order/checkout`,
         method: 'POST',
         data: data,
         contentType: false,
         processData: false,
     });
     Api.Order.GetOrder = () => $.ajax({
-        url: `/customer/apip/order/get`,
+        url: `/order/get`,
         method: 'GET',
     });
 })();

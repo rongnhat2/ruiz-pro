@@ -99,6 +99,10 @@ const View = {
         })
 
         localStorage.setItem("ruiz-cart", JSON.stringify(card_new)); 
+        
+        var card_data = localStorage.getItem("ruiz-cart")
+        var count = (card_data == null || card_data == "") ? 0 : JSON.parse(card_data).length;
+        $(".cart-count .count").html(count)
 
         card_json_new = JSON.parse(JSON.stringify(card_new))
         renderData(card_json_new)

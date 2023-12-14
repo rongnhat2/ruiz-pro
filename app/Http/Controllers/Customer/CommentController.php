@@ -33,7 +33,7 @@ class CommentController extends Controller
             "rating"        => $request->data_rate,
             "comment"       => $request->data_comment,
         ];
-        return($this->comment->create($data));
+        $this->comment->create($data);
         return $this->comment->send_response(200, null, null);
     }
     public function get_rate($id){

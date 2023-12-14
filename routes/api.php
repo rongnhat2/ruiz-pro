@@ -69,6 +69,12 @@ Route::prefix('discount')->group(function () {
     Route::get('/delete/{id}', 'Admin\DiscountController@delete')->name('admin.discount.delete');
 }); 
 
+Route::prefix('statistic')->group(function () {
+    Route::get('get-total', 'Admin\OrderController@get_total')->name('admin.order.get_total');
+    Route::get('get-best-sale', 'Admin\OrderController@get_best_sale')->name('admin.order.get_best_sale');
+    Route::get('get-customer', 'Admin\OrderController@get_customer')->name('admin.order.get_customer');
+    Route::get('get-month', 'Admin\OrderController@get_month')->name('admin.order.get_month');
+});
 
 Route::prefix('warehouse')->group(function () {
     Route::get('get-item', 'Admin\WarehouseController@get_item')->name('admin.warehouse.item.get');
@@ -103,10 +109,6 @@ Route::prefix('customer')->group(function () {
         Route::get('/get', 'Customer\BrandController@get')->name('customer.brand.get'); 
     });
 
-    Route::prefix('comment')->group(function () {
-        Route::get('get/{id}', 'Customer\CommentController@get')->name('customer.comment.get');
-        Route::post('create', 'Customer\CommentController@create')->name('customer.comment.create');
-    });
 
     Route::prefix('product')->group(function () {
         Route::get('/get-all-new', 'Customer\ProductController@get_all_new')->name('admin.product.get');

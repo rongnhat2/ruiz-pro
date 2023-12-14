@@ -300,19 +300,19 @@ const Api = {
 // Statistic
 (() => {
     Api.Statistic.getTotal = () => $.ajax({
-        url: `/apip/statistic/get-total`,
+        url: `/api/statistic/get-total`,
         method: 'GET',
     });
     Api.Statistic.getBestSale = () => $.ajax({
-        url: `/apip/statistic/get-best-sale`,
+        url: `/api/statistic/get-best-sale`,
         method: 'GET',
     });
     Api.Statistic.getCustomerBuy = () => $.ajax({
-        url: `/apip/statistic/get-customer`,
+        url: `/api/statistic/get-customer`,
         method: 'GET',
     });
     Api.Statistic.getMonth = () => $.ajax({
-        url: `/apip/statistic/get-month`,
+        url: `/api/statistic/get-month`,
         method: 'GET',
     });
 })();

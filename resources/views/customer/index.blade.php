@@ -93,6 +93,7 @@
         </div>
         <!-- Banner Area End -->
         
+        
         <!-- Product Area Start -->
         <div class="product-area section-pb section-pt-30">
             <div class="container">
@@ -103,9 +104,9 @@
                             <li class="product-tab__item nav-item active">
                                 <a class="product-tab__link active" id="nav-new-tab" data-bs-toggle="tab" href="#nav-new" role="tab" aria-selected="false">New Arrivals</a>
                             </li>
-                            {{-- <li class="product-tab__item nav-item">
+                            <li class="product-tab__item nav-item">
                                 <a class="product-tab__link " id="nav-new-tab" data-bs-toggle="tab" href="#nav-discount" role="tab" aria-selected="false">Discount</a>
-                            </li> --}}
+                            </li>
                         </ul>
                     </div>
                 </div>

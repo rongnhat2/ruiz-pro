@@ -57,6 +57,13 @@ Route::middleware(['AuthCustomer:logined'])->group(function () {
     Route::get('profile', 'Customer\DisplayController@profile')->name('admin.profile.index');
 });
 
+Route::prefix('customer')->group(function () {
+    Route::prefix('comment')->group(function () {
+        Route::get('get/{id}', 'Customer\CommentController@get')->name('customer.comment.get');
+        Route::post('create', 'Customer\CommentController@create')->name('customer.comment.create');
+    });
+}); 
+
 
 Route::middleware(['AuthAdmin:auth'])->group(function () {
     Route::prefix('admin')->group(function () {

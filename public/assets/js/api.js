@@ -85,11 +85,11 @@ const Api = {
 //Comment
 (() => {
     Api.Comment.GetAll = (id) => $.ajax({
-        url: `/api/customer/comment/get/${id}`,
+        url: `/customer/comment/get/${id}`,
         method: 'GET',
     });
     Api.Comment.Create = (data) => $.ajax({
-        url: `/api/customer/comment/create`,
+        url: `/customer/comment/create`,
         method: 'POST',
         data: data,
         contentType: false,
